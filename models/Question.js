@@ -1,4 +1,13 @@
 export class Question {
+
+    /**
+     * 
+     * @param {string} text 
+     * @param {string} level 
+     * @param {string} options 
+     * @param {string} answer 
+     */
+
     constructor(text,level,options,answer){
         this.text = text
         this.level = level
