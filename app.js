@@ -1,8 +1,14 @@
 import { questions } from "./data/questions.js";
+import { Game } from "./models/Game.js";
 
-console.log(questions);
+
+
+
 function main(){
-    console.log("run")
+    
+    const newGame = new Game(questions)
+
+    
 }
 
 main();
