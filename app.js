@@ -1,6 +1,8 @@
-import { data } from "./data/data.js";
-import { Question } from "./models/Question.js";
+import { questions } from "./data/questions.js";
 
-const question = new Question("asdasdas","2",["a","s","f"],"a") ;
+console.log(questions);
+function main(){
+    console.log("run")
+}
 
-console.log(question);
+main();
