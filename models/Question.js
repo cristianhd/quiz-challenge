@@ -15,8 +15,5 @@ export class Question {
         this.answer = answer;
     }
 
-    getLevel(){
-        return this.level;
-    }
 
 }
