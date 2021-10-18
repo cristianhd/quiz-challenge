@@ -1,6 +1,7 @@
 export class Game {
   accPrize = 0;
-  round = 1;
+  round = "1";
+  currentQuestion = "";
 
   /**
    *
@@ -16,10 +17,19 @@ export class Game {
   }
 
   getRandomQuestion(round) {
-      return this.filterQuestion(round)[this.getRandomInt(1,6)]
+    return this.filterQuestion(round)[this.getRandomInt(1, 6)];
   }
 
   filterQuestion(level) {
     return this.questions.filter((question) => question.level === level);
+  }
+
+  init() {
+    this.currentQuestion = this.getRandomQuestion(this.round);
+  }
+
+  end() {
+    if (round === "5") return true;
+    return false;
   }
 }
