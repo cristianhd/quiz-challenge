@@ -16,7 +16,7 @@ export class UserInterface {
             const button = document.createElement("button");
             button.className = "button";
             button.innerHTML = options[i];
-            button.addEventListener("click",callback)
+            button.addEventListener("click", () => callback(options[i]))
             
             optionsContainer.append(button)
         }
