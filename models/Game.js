@@ -17,7 +17,7 @@ export class Game {
   }
 
   getRandomQuestion(round) {
-    return this.filterQuestion(round)[this.getRandomInt(1, 6)];
+    return this.filterQuestion(round)[this.getRandomInt(1, 5)];
   }
 
   filterQuestion(level) {
@@ -29,7 +29,20 @@ export class Game {
   }
 
   end() {
-    if (round === "5") return true;
+    if (this.round === "5") return true;
     return false;
+  }
+
+  checkAnswer(answer){
+    if(this.currentQuestion.answer === answer) {
+      this.round = parseInt(this.round) + 1;
+      this.round = this.round.toString()
+      return true
+    }
+    return false
+  }
+
+  leaveGame(){
+
   }
 }
