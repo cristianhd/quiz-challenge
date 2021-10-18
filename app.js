@@ -3,11 +3,15 @@ import { Game } from "./models/Game.js";
 import { UserInterface } from "./models/UserInterface.js";
 
 function render(game,ui){
-    if(Game.end()){
+    if(game.end() || game.leaveGame()){
         console.log("termine");
     } else {
-        UI.displayQuestion(game.currentQuestion.text)
-        UI.displayOptions(game.currentQuestion.options,)
+        console.log(game.currentQuestion);
+        ui.displayQuestion(game.currentQuestion.text)
+        ui.displayOptions(game.currentQuestion.options,(answer)=>{
+            game.checkAnswer(answer);
+            render(game,ui)
+        })
 
     }
 }
@@ -16,9 +20,11 @@ function render(game,ui){
 function main(){
     
     const game = new Game(questions)
-    const UI = new UserInterface()
+    const ui = new UserInterface()
 
    game.init()
+
+   render(game,ui);
     
 
     
